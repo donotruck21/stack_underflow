@@ -1,0 +1,11 @@
+<br><div ng-controller="UsersController" class="jumbotron">
+  	<h1 class="welcomeText">Welcome to Stack<b>underflow</b></h1>
+  	<img src="http://veithen.github.io/images/icon-stackoverflow.svg" class="welcomeImg">
+  	<p>Enter your name to join our community of developers and programmers. Post your questions, answer other users' questions, or look through our discussion boards to learn more about your favorite topics!</p><br><br>
+  	<form name="userForm">
+	  	<input type="name" class="form-control" style="width:400px" ng-model="newUser.name" name="user_name" ng-minlength="1" required>
+	  		<span ng-show="userForm.user_name.$dirty && userForm.user_name.$invalid"><b>Please enter a name!</b></span>
+			<!-- <span ng-show="userForm.user_name.$dirty && userForm.user_name.$valid">Click Me! =></span> -->
+	  	<br><br><a href="#/dashboard" ng-click="addUser()"><button class="btn btn-primary" ng-disabled="userForm.user_name.$invalid">Enter</button></a>
+  	</form>
+</div>

@@ -1,0 +1,69 @@
+<div ng-controller="DashboardController">
+
+	<nav class="navbar navbar-default">
+	  	<div class="container-fluid">
+	    	<div class="navbar-header">
+	      		<p class="navbarText">Stack<span class="bold">underflow</span><img src="http://veithen.github.io/images/icon-stackoverflow.svg" height=25 class="logo"></p>
+	    	</div>
+
+	    	<div class="collapse navbar-collapse">
+	      		<ul class="nav navbar-nav navbar-right">
+	      			<li><h4 class="welcome">Welcome, {{user.name}}</h4></li>
+	        		<!-- <li><button class="btn btn-danger" style="margin-top:10px">Log Out</button></li> -->
+	        		<li><a href="/" class="dashLink">Logout</a></li>
+	      		</ul>
+	    	</div><!-- /.navbar-collapse -->
+	  	</div><!-- /.container-fluid -->
+	</nav><br>
+
+	<div class="searchDiv">
+		<label>
+			Search by Category:<input class="form-control searchField" ng-model="searchText.category"><br>
+		</label>
+	</div>
+	<table class="table table-hover table-bordered table-striped">
+		<thead>
+			<th class="info">User Name</th>
+			<th class="info">Question</th>
+			<th class="info">Category</th>
+			<!-- <th class="info">Answers</th> -->
+		</thead>
+		<tbody>
+			<tr ng-repeat="question in questions | filter:searchText">
+				<td>{{question.name}}</td>
+				<td><a href='#/question/{{question._id}}'>{{question.title}}</a></td>
+				<td>{{question.category}}</td>
+				<!-- <td>0</td> -->
+			</tr>
+		</tbody>
+	</table><br><br>
+
+	<h2>Post a new Question!</h2>
+	<form name="form">
+		<label>
+			Category: 
+			<select class="form-control" style="width:400px" name="category" ng-model="newQuestion.category" required>
+				<option>HTML</option>
+				<option>CSS</option>
+				<option>JavaScript</option>
+				<option>MongoDB</option>
+				<option>SQL</option>
+				<option>Angular JS</option>
+				<option>Python</option>
+				<option>Ruby</option>
+				<option>Java</option>
+				<option>Swift</option>
+				<option>React JS</option>
+				<option>Ember JS</option>
+				<option>Other</option>
+			</select>
+		</label><br>
+		<label>
+			Question: <input type="text" class="form-control" style="width:400px" name="title" ng-model="newQuestion.title" required>
+		</label><br>
+		<label>
+			Description: <textarea class="form-control" rows="3" cols="45" name="description" ng-model="newQuestion.description" required></textarea>
+		</label><br><br>
+		<button class="btn btn-primary" style="margin-left:320px" ng-click="addQuestion(user)" ng-disabled="form.category.$invalid || form.title.$invalid || form.description.$invalid">Submit</button>
+	</form>
+</div>

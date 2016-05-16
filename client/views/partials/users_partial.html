@@ -1,0 +1,28 @@
+<style type="text/css">
+	.userSummary{
+		margin-left: 50px;
+	}
+</style>
+<div ng-controller="UserController">
+	<nav class="navbar navbar-default">
+	  	<div class="container-fluid">
+	    	<div class="navbar-header">
+	      		<p class="navbarText">Stack<span class="bold">underflow</span><img src="http://veithen.github.io/images/icon-stackoverflow.svg" height=25 class="logo"></p>
+	    	</div>
+
+	    	<div class="collapse navbar-collapse">
+	      		<ul class="nav navbar-nav navbar-right">
+	      			<li><a href="#/dashboard" class="dashLink">Dashboard</a></li>
+	        		<!-- <li><button class="btn btn-danger" style="margin-top:10px">Log Out</button></li> -->
+	      			<li><a href="/" class="dashLink">Logout</a></li>
+	      		</ul>
+	    	</div><!-- /.navbar-collapse -->
+	  	</div><!-- /.container-fluid -->
+	</nav><br>
+
+	<h1>Username: {{user.name}}</h1>
+	<div class="userSummary">
+		<h3>Questions: {{num_questions}}</h3>
+		<h3>Answers: {{num_answers}}</h3>
+	</div>
+</div>
