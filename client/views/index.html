@@ -201,8 +201,6 @@
 					alert("Please include a category.")
 				}else if($scope.newQuestion.title.length < 4){
 					alert("Title is too short! Must be at least 4 characters.")
-				}else if($scope.newQuestion.description.length < 4){
-					alert("Description is too short! Must be at least 4 characters.")
 				}else{
 					QuestionFactory.create($scope.newQuestion, user, function() {
 						console.log("made it back to front end, running this callback function NOW")
