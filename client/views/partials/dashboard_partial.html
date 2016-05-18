@@ -62,8 +62,8 @@
 			Question: <input type="text" class="form-control" style="width:400px" name="title" ng-model="newQuestion.title" required>
 		</label><br>
 		<label>
-			Description: <textarea class="form-control" rows="3" cols="45" name="description" ng-model="newQuestion.description" required></textarea>
+			Description: <textarea class="form-control" rows="3" cols="45" name="description" ng-model="newQuestion.description"></textarea>
 		</label><br><br>
-		<button class="btn btn-primary" style="margin-left:320px" ng-click="addQuestion(user)" ng-disabled="form.category.$invalid || form.title.$invalid || form.description.$invalid">Submit</button>
+		<button class="btn btn-primary" style="margin-left:320px" ng-click="addQuestion(user)" ng-disabled="form.category.$invalid || form.title.$invalid">Submit</button>
 	</form>
 </div>
