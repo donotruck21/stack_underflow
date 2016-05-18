@@ -12,7 +12,7 @@ var UserSchema = new mongoose.Schema({
 var QuestionSchema = new mongoose.Schema({
 	name: {type: String, required: true},
 	title: {type: String, required: true},
-	description: {type: String, required: true},
+	description: {type: String},
 	category: {type: String, required: true}
 	// topics: [{type: mongoose.Schema.Types.ObjectId, ref: 'Topics'}]
 });
